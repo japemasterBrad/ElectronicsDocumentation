@@ -1,0 +1,50 @@
+﻿body {
+}
+
+.canvas {
+  border: 2px solid black;
+  padding: 10px;
+  background: #8d8d8d;
+  font-weight: 500;
+}
+
+.selection-window {
+  display: flex;
+  width: 100%;
+  color: white;
+}
+
+.selection-window h3 {
+  display: flexbox;
+  padding: 5px;
+  margin: 20px;
+}
+
+  .selection-window h3:hover {
+    font-weight: 900;
+    cursor: default;
+  }
+
+.information-window {
+  background-color: white;
+  height: auto;
+  border: 2px solid black;
+}
+
+.capacitor-equasions {
+  display: flex;
+  width: 100%;
+/*  color: white;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: #8d8d8d;*/
+}
+
+.capacitor-equasions h5 {
+  display: flexbox;
+  padding: 20px;
+}
+
+.capacitor-equasions h5:hover {
+  font-weight: 900;
+}

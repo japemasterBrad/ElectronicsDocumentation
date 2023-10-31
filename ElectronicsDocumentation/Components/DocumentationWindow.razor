@@ -1,0 +1,61 @@
+﻿<div class="canvas">
+
+  <div class="selection-window">
+    <h3 onclick="@GetResistorInformation">Resistor</h3>
+    <h3 onclick="@GetCapacitorInformation">Capacitor</h3>
+  </div>
+
+  <div class="information-window">
+    <h4>@_title</h4>
+    <p>@_body</p>
+    
+    <h4>Equasion</h4>
+    @if (_title == "Capacitor")
+    {
+      <div class="capacitor-equasions">
+        <h5 onclick="@GetCapacitorVoltage">Voltage</h5>
+        <h5 onclick="@GetCapacitorChargeStored">Charge Stored</h5>
+      </div>
+    }
+    <p>@_equasion</p>
+
+  </div>
+</div>
+
+@code {
+  ResistorInformation resistorComponent = new ResistorInformation();
+  CapacitorInfomration capacitorComponent = new CapacitorInfomration();
+
+  public void GetResistorInformation()
+  {
+    _title = resistorComponent.ResistorTitle;
+    _body = resistorComponent.ResistorBody;
+    _equasion = resistorComponent.ResistorEquasion;
+  }
+
+  public void GetCapacitorInformation()
+  {
+    _title = capacitorComponent.CapacitorTitle;
+    _body = capacitorComponent.CapacitorBody;
+
+    _equasion = capacitorComponent.CapacitorEquasionVoltage;
+  }
+
+  public void GetCapacitorVoltage()
+  {
+    _equasion = capacitorComponent.CapacitorEquasionVoltage;
+  }
+
+  public void GetCapacitorChargeStored()
+  {
+    _equasion = capacitorComponent.CapacitorEquasionChargeStored;
+  }
+
+  #region Private Members
+
+  private string? _title;
+  private string? _body;
+  private string? _equasion;
+
+  #endregion
+}
